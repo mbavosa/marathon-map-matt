@@ -14,6 +14,9 @@
             <li class="nav-item" v-show="isLoggedIn">
                 <router-link class="nav-link" to='/marathonmap'>MarathonMap</router-link>
             </li>
+            <li class="nav-item" v-show="isLoggedIn">
+                <router-link class="nav-link" to='/runlist'>Run List</router-link>
+            </li>
         </ul>
         <ul class='navbar-nav' v-show='isLoggedIn'>
             <li class='nav-item dropdown'>

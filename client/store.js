@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     isLoggedIn: false,
     user: {},
-    users: []
+    users: [],
+    statesVisted: []
   },
   mutations: {
     setLoggedIn(state, isLoggedIn) {
@@ -18,6 +19,9 @@ export default new Vuex.Store({
     },
     setUsers(state, users) {
       state.users = users;
+    },
+    addStatesVisited(state, visited) {
+      state.visited.push(visited)
     }
   },
   actions: {
@@ -62,6 +66,18 @@ export default new Vuex.Store({
           commit('setUsers', response.data);
         });
     },
+    addNewTask({ commit }, name) {
+      // return new Promise((resolve, reject) => {
+          return Vue.axios.post('/runlist', { name })
+              .then(response => {
+                  commit('addTask', response.data)
+
+                  // setTimeout(() => {
+                  //     resolve()
+                  // }, 10000);
+              });
+      // });
+  },
   },
 
   getters: {

@@ -35,6 +35,15 @@ module.exports = {
           {
               test: /\.vue$/,
               use: ['vue-loader']
+          },
+          {
+            test: /\.(csv)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {}  
+              }
+            ]
           }
       ]
   },

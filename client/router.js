@@ -8,6 +8,7 @@ import Register from './views/Register.vue';
 import Users from './views/Users.vue';
 import User from './views/User.vue';
 import MarathonMap from './views/MarathonMap.vue';
+import RunList from './views/RunList.vue';
 
 Vue.use(Router);
 
@@ -43,6 +44,11 @@ export default new Router({
             path: '/marathonmap',
             name: 'marathonmaplist',
             component: MarathonMap
+        },
+        {
+            path: '/runlist',
+            name: 'runnerlist',
+            component: RunList
         }
     ]
 });
